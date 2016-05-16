@@ -26,7 +26,9 @@ False None 0 "" () [] {}
 
 ##条件执行和if
 if
+
 else
+
 elif
 
 ##比较运算符
@@ -48,3 +50,50 @@ is　比较同一性而非相等性，is 用于判断两者是否等同（同一
 and
 or
 not
+
+#if的断言
+assert的用法：在条件后添加
+
+#loop
+## while loop
+## for loop
+用for 遍历列表
+
+*能用for循环，尽量不用while循环*
+
+##一些迭代工具
+1. 并行迭代
+    zip函数，用来并行迭代，压缩多个序列为一个元组。
+    *压缩不等长的序列时，到最短的序列用完时即止。*
+2. 按索引迭代
+3. 翻转和排序迭代
+    
+    reversed
+    
+    sorted
+    
+##跳出循环
+break
+
+continue
+
+while True:
+    break   
+    
+**避免频繁使用break影响代码可读性**
+
+#列表推导式
+列表推导式是利用其他列表创建新列表的一种方法
+> [x*x for x in range(10) if x % 2 ==0]
+
+##del用来删除变量或数据结构的一部分
+
+##使用exec和eval执行和求值字符串
+**HOW**
+
+
+
+
+
+
+
