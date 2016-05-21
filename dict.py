@@ -10,13 +10,15 @@ print "dustin's age is %(dustin)s." % age
     >>>dict = {}
 字典的清除，可清除关联字典的键和键值
     >>>returned_value = dict.clear()
-    >>>d
+    >>>dict
     {}
-
+    >>>print returned_value
+    None
+    
 字典的复制
 x = {}
 y= x.copy
-复制后，替换y的值，x不受影响；修改y的值，x同样受影响。
+复制后，替换y的值，x不受影响；修改（删除／增加）y的值，x同样受影响。
 
 深复制
     >>>from copy import deepcopy
