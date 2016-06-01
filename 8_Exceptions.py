@@ -54,5 +54,25 @@ try/except 还是 if/else
 
 ###############################################################################
 
+'''
+# 调试
+断言 assert
+增加一个条件，为真就什么都不做
+
+Import logging
+loggong.basicConfig(level=logging.INFO)
+打印错误记录,level有debug，info，warning，error等几个级别
+
+pbd调试工具
+pdb.set_trace()
+'''
+
+n = input('>>>')
+def foo(n):
+    assert n != 0, 'Zero Error'
+    return n / 1
+foo(n)
+
+###############################################################################
 
 
