@@ -43,6 +43,7 @@ super(Class, self).__init__()
 # 面向对象的高级编程
 
 ## 使用__slots__ 限制class能添加的属性
+
 对继承的子类没有作用
 
 # property 
@@ -57,8 +58,6 @@ super(Class, self).__init__()
 装饰器：在代码运行期间动态增加功能的方式，本质上，decorator返回函数的一个高阶函数
 
 [参考链接](http://www.wklken.me/posts/2013/07/19/python-translate-decorator.html)
-
-
 
 
 
