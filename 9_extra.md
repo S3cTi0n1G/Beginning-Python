@@ -1,10 +1,31 @@
 # 第九章补充知识点
 
-一个星期没有学习Python 进入状态很慢了
-有几个只是点卡住了
-接下来要学习的
+## 迭代器
 
-# 迭代器
+___iter___方法返回一个迭代器
+
+    class Fibs:
+        def ___init___(self):
+            self.a = 0
+            self.b = 1
+        def next(self):
+            self.a, self.b = self.b, self.a + self.b
+            return self.a
+    def ___init___(self):
+        return self
+
+# 生成器（generator）
+## 生成器推导式
+把列表生成式的[]改成()，可以创建generator
+    >>>L = [x for x in range(10,20,2)]
+    # 列表生成式
+    >>>g = (x for x in range(10,20,2))
+    # 生成器
+
+使用for 循环打印生成器    
+
+## yield 语句
+
 
 # 递归
 
