@@ -33,5 +33,57 @@ frozenset 构造函数创建给定集合的副本
 
 heapify 函数使用任意列表作为参数，并将其转换为合法的堆
 
-## 双堆序列
+## 双端序列
 > from collections import deque
+
+q.rotate(n)
+deque中的元素向右移动n个位置。如果n是负数的向左移动
+
+## time
+>time.asctime(tuple)
+
+将9个元素的数组转换为时间形式的字符串
+
+>time.sleep(secs)
+
+休眠secs 秒
+
+>time.mktime(tuple)
+
+把tuple 转换为本地时间（秒数）
+
+>time.time()
+
+当前秒数，新纪元开始的秒数，以UTC为准
+
+>time.localtime(secs)
+将secs 秒转换为日期元组，以本地时间为准
+
+## 随机数
+>from random import *
+
+>random()
+
+返回0<n<=1 之间的随机实数n
+
+>getrandbits(n)
+
+ 返回长度为n位的长整型随机数
+
+> uniform(a, b)
+
+返回随机实数n,其中a<= n <b
+
+>randrang(start, stop, step)
+
+返回range(start, stop, step) 中的随机数
+
+>seq = 'abcdefg12345'
+>choice(seq)
+>'1'
+
+返回序列seq 中随意元素
+
+>sample(seq, n)
+
+返回序列seq 中n 个随机且不重复的元素
