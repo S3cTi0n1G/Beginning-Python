@@ -138,3 +138,39 @@ re 模块包含了对正则表达式 *（regular expression）* 的支持
   ^ 只在开头匹配
 
   $ 只在末尾匹配
+
+## re 模块
+
+* re.compile(pattern[, flags])
+
+* re.match() 在给定字符串开头匹配
+
+* re.search() 在给定的字符串中寻找第一个匹配的子字符串
+
+* re.split(pattern, 'some_thing') 根据pattern 分割
+
+  如果pattern 中包括括号，括起来的字符会散布在子字符串之间
+
+  some_thing 后面接maxsplit=n 参数,表示最多分割n 次
+
+*  re.sub(pat, repl, string[, count=0]) 将pat 替换为repl
+
+*  re.escape() 将字符串转换为正则表达式能识别的部分
+
+## 匹配对象和组
+
+re 模块同时返回了哪个模块匹配了哪些信息
+
+组的方法：group start end span
+
+## 作为替代的组号和函数
+
+* 啰嗦模式
+
+re.VERBOSE
+
+* 贪婪和非贪婪模式
+
+在重复运算符后加 +
+
+例如 +?,表示尽可能少的匹配
