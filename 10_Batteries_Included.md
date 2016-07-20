@@ -91,6 +91,9 @@ deque中的元素向右移动n个位置。如果n是负数的向左移动
 ## re
 re 模块包含了对正则表达式 *（regular expression）* 的支持
 
+[参考资料](http://www.runoob.com/python/python-reg-expressions.html)
+
+
 * 通配符 *wildcard*
 
   . 可以匹配一个字母
@@ -117,7 +120,7 @@ re 模块包含了对正则表达式 *（regular expression）* 的支持
 
   使用管道符号 |
 
-  子模式使用括号 p(ython|erl)
+  子模式使用括号 p(ython|erl),表示匹配python  或perl
 
 * 可选项
 
@@ -143,6 +146,8 @@ re 模块包含了对正则表达式 *（regular expression）* 的支持
 
 * re.compile(pattern[, flags])
 
+把正则表达式的模式和标识转化成正则表达式对象，供 match() 和 search() 这两个函数使用。
+
 * re.match() 在给定字符串开头匹配
 
 * re.search() 在给定的字符串中寻找第一个匹配的子字符串
@@ -153,9 +158,23 @@ re 模块包含了对正则表达式 *（regular expression）* 的支持
 
   some_thing 后面接maxsplit=n 参数,表示最多分割n 次
 
-*  re.sub(pat, repl, string[, count=0]) 将pat 替换为repl
+*  re.sub(pat, repl, string, count=0, flags=0) 将string  中匹配pat 的内容替换为repl,可选参数 count 是模式匹配後替换的最大次数；count 必须是非负整数。缺省值是 0 表示替换所有的匹配。如果无匹配，字符串将会无改变地返回。
 
 *  re.escape() 将字符串转换为正则表达式能识别的部分
+
+* flags=0 参数的用法
+
+re.I 忽略大小写
+
+re.L 表示特殊字符集 \w, \W, \b, \B, \s, \S 依赖于当前环境
+
+re.M 多行模式
+
+re.S 即为’ . ’并且包括换行符在内的任意字符（’ . ’不包括换行符）
+
+re.U 表示特殊字符集 \w, \W, \b, \B, \d, \D, \s, \S 依赖于 Unicode 字符属性数据库
+
+re.X 为了增加可读性，忽略空格和’ # ’后面的注释,即啰嗦模式
 
 ## 匹配对象和组
 
@@ -164,10 +183,6 @@ re 模块同时返回了哪个模块匹配了哪些信息
 组的方法：group start end span
 
 ## 作为替代的组号和函数
-
-* 啰嗦模式
-
-re.VERBOSE
 
 * 贪婪和非贪婪模式
 
