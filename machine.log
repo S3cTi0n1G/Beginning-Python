@@ -1,0 +1,12 @@
+# Machine output log File
+echo myself
+
+Day 08082016
+===================
+
+Restored elementary OS on SD Card
+
+Day 08142016
+===================
+
+Fixed SD Card umount during lid close
