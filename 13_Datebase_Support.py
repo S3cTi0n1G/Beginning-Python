@@ -9,17 +9,23 @@ def convert(value):
         value = '0'
     return float(value)
 
-conn = sqlite3.connect('foo.db')
+conn = sqlite3.connect('food.db')
 curs = conn.cursor()
 
-curs.exexute('''
-CREATE TABLE food(
+curs.execute('''
+CREATE TABLE food (
     id     TEXT     PRIMARY KEY，
-    desc   TEXT
-    water  FLOAT
+    desc   TEXT,
+    water  FLOAT,
 )
-‘’‘’)
+''')
 
-query = 'INSERT INTO food VALUES (?,?,?)'
+query = 'INSERT INTO food VALUES (?, ?)'
 
-for line in open ('A')
+for line in open ('FOOD_DES.txt'):
+    fields = line.split('^')
+    vals = [convert(f) for f in fields[:field_count]]
+    curs.execute(query, vals)
+
+conn.commit()
+conn.close()

@@ -1,4 +1,4 @@
-## Python 数据库编程接口
+## Python DB  API
 
 ### 全局变量
 
@@ -31,3 +31,14 @@ connect 函数的方法
 ### 类型
 
 ### SQLite
+
+    import sqlite3
+    conn = sqlite3.connect('some.db')
+
+    curs = conn.cursor()
+    # 获得游标
+
+    conn.commit()
+
+    conn.close()
+    
