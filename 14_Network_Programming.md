@@ -9,6 +9,7 @@ socket.socket(socket.AF_INET, socket.SOCK_STEAM, )
     第三个参数，默认0，不需要提供
 
 一个服务端代码
+
     import socket
 
     s = socket.socket()
@@ -26,3 +27,41 @@ socket.socket(socket.AF_INET, socket.SOCK_STEAM, )
         print ‘Got Connection from’, addr
         s.send('Thank you for Connecting')
         c.close()
+
+## urllib 和 urllib2 模块
+
+### 区别
+
+* urllib2 可以接受一个 Request 对象，并以此可以来设置一个 URL 的 headers，但是 urllib 只接收一个 URL。这意味着，你不能伪装你的用户代理字符串等。
+* urllib 模块可以提供进行 urlencode 的方法，该方法用于 GET 查询字符串的生成，urllib2 的不具有这样的功能。这就是 urllib 与 urllib2 经常在一起使用的原因。
+
+[扩展阅读][1]
+
+### 打开远程文件（Read-Only）
+
+    from urllib import urlopen
+    webpage = urlopen('http://www.python.org')
+    # 打开网页
+    file_open = urlopen('file:///home/section/tmp/aa.log')
+    # 打开文件,注意对 \ 转义
+
+urlopen 返回的类文件对象支持close、read、readline、readlines 方法
+
+### 获取远程文件
+
+urlretrieve 返回一个元组(filename, headers)
+
+## SocketServer
+
+？？？
+
+## 多个连接
+
+forking threading 异步I/O
+
+### Twisted
+
+pass
+
+-----------------
+[1]: http://www.cnblogs.com/wly923/archive/2013/05/07/3057122.html "外部链接"  

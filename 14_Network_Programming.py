@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-
+--------------------------------------------------------------------------------
 '''
 import socket
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -28,7 +28,7 @@ print header
 with open('google.html', 'wb') as f:
     f.write(html)
 '''
-
+--------------------------------------------------------------------------------
 '''
 import socket
 
@@ -39,7 +39,7 @@ port = 9999
 # linux 系统中，需要admin 权限才能使用1024 以下的port
 s.bind((host, port))
 
-s.listen(5)
+    s.listen(5)
 # 操作系统可以挂起的最大连接数量。该值至少为1，大部分应用程序设为5就可以了。
 print 'Waiting for connection...'
 
@@ -50,4 +50,19 @@ while True:
     print 'Accept new connection from %s:%s...' % addr
     c.send('Thank you for Connecting')
     c.close()
+'''
+--------------------------------------------------------------------------------
+'''
+from SocketServer import TCPServer, ForkingMixIn, StreamRequesetHandler
+
+class Server(ForkingMixIn, TCPServer): pass
+
+class Handler(StreamRequesetHandler):
+
+    def handle(self):
+        addr = self.request.getpeername()
+        self.wfile.write('Thank you for connecting')
+
+server = Server(('',1234), Handler)
+server.serve_forever()
 '''
