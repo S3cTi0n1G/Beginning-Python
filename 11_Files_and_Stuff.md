@@ -2,7 +2,7 @@
 
 ## 打开文件
 
->f = open(name[, mode[,buffering]])
+>>>f=open(name[, mode[,buffering]])
 
 mode 和buffering 参数可选
 
@@ -10,19 +10,19 @@ mode 和buffering 参数可选
 
 读模式
 
-> f =open(filename, 'r')
+>>>f=open(filename, 'r')
 
 写模式
 
-> f =open(filename, 'w')
+>>>f=open(filename, 'w')
 
 追加模式(只能写在末尾)
 
-> f =open(filename, 'a')
+>>>f=open(filename, 'a')
 
 二进制模式
 
-> f =open(filename, 'rb')
+>>>f=open(filename, 'rb')
 
 *为什么使用二进制模式*
 
@@ -30,7 +30,7 @@ mode 和buffering 参数可选
 
 读写模式
 
-> f =open(filename, '+')
+>>>f=open(filename, '+')
 
 ## 缓存
 
@@ -38,6 +38,24 @@ mode 和buffering 参数可选
 
 参数 1 有缓存，缓存在内存，只有使用了flush 和close才会更新硬盘数据。大于1的数字大u币奥缓存大
 小，-1 代表使用默认大小
+
+## 使用With 语句
+
+    with open('path/file', 'r') as f:
+       print f.read()
+
+# 字符编码
+
+>>>u = f.read().decode('gbk')
+以GBK 编码读取文件
+
+使用codecs 模块自动转换编码
+
+    import codecs
+    with codecs.open('/path/test.txt', 'r', 'gbk') as f:
+        f.read() # u'\u6d4b\u8bd5'
+
+写入特定编码的文件方法类似
 
 ## 基本的文件方法
 
@@ -126,3 +144,39 @@ http://blog.jobbole.com/64175/
 ## 文件迭代器
 
 文件对象是可迭代的，意味着可以在for 循环中使用它们
+
+# 操作文件和目录
+
+os 模块和os.path 模块
+
+os.path.join() 合成路径
+
+os.path.split() 拆分路径
+    
+    >>>os.path.split('/usr/lib/python2.7/posixpath.pyc')
+    ('/usr/lib/python2.7', 'posixpath.pyc')
+
+os.rename('test.py', 'test.md') 重命名文件
+
+os.remove('file.py') 删除文件
+
+os 模块不存在复制函数，可以从shutil 导入copyfile() 函数
+
+# 序列化
+
+序列化：把变量存储或传输的过程
+
+##　pickle 模块
+
+pickle.dump() 写入
+
+pickle.load() 读取
+
+## JSON 模块
+
+读取写入的方法同上
+
+Python的dict对象可以直接序列化为JSON的{}，其他的对象和类需要用函数转换
+
+
+

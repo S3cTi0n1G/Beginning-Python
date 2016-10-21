@@ -54,3 +54,19 @@ __slots__ 变量，用于限制class 能添加的属性。
 
 对继承的子类无效
 
+# 使用元类
+
+## type()
+
+type()用于查看一个函数或变量的类型；也可创建新的变量
+
+type() 函数传入3个参数
+
+    >>>Hello = type('Hello', (object,), dict(hello=fn))
+    1.class 的名称
+    2.继承的父类集合
+    3.class的方法名称与函数绑定，这里我们把函数fn绑定到方法名hello上。
+
+## metaclass
+
+TBL...
