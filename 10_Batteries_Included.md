@@ -34,12 +34,15 @@ frozenset 构造函数创建给定集合的副本
 heapify 函数使用任意列表作为参数，并将其转换为合法的堆
 
 ## 双端序列
+
 > from collections import deque
 
-q.rotate(n)
-deque中的元素向右移动n个位置。如果n是负数的向左移动
+deque 实现了list 的append()和pop()，还支持appendleft()和popleeft()
+
+q.rotate(n)，deque中的元素向右移动n个位置。如果n是负数的向左移动
 
 ## time
+
 >time.asctime(tuple)
 
 将9个元素的数组转换为时间形式的字符串
@@ -189,3 +192,64 @@ re 模块同时返回了哪个模块匹配了哪些信息
 在重复运算符后加 +
 
 例如 +?,表示尽可能少的匹配
+
+# 更多自带模块
+
+## collections
+
+nametuple，用于创建一个自定义的tuple 对象
+
+defaultdict，一种在引用不存在的值时，返回一个默认值的dict。
+
+OrderedDict，实现按key的插入顺序排列的dict
+
+Counter，一个简单的计数器，可统计字符出现的个数。
+
+## base64
+
+base64，是一种用64个字符来表示任意二进制数据的方法
+
+>>>import base64
+
+>>>base64.b64encode('txture') 
+
+>>>base64.b64decode('txture')
+
+base64 编码后会把=去掉，解码需要加上，Base64编码的长度永远是4的倍数。
+
+## struct
+
+Python 提供了一个struct模块来解决str和其他二进制数据类型的转换
+
+## hashlib
+
+hahlib 提供了常见的摘要算法，如MD5，SHA1等
+
+    import hashlib
+    
+    md5 = hashlib.md5()
+    md5.update('hind this')
+    print md5.hexdigest()
+
+## itertools
+
+用于操作迭代对象的函数
+
+itertools.count() 创建一个无限的迭代器
+
+itertools.cycle() 把传入的一个序列无限重复下去 
+
+itertools.repeat() 负责把一个元素无限重复下去，不过如果提供第二个参数就可以限定重复次数
+
+通过itertools.takewhile()等函数根据条件判断来截取出一个有限的序列
+
+itertools.chain() 把一组迭代对象串联起来
+
+itertools.groupby()把迭代器中相邻的重复元素挑出来放在一起
+
+itertools.imap() 可以作用于无穷序列，返回迭代对象，而map()返回list
+
+## XML
+
+## HTMLParser
+
